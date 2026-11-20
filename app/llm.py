@@ -5,8 +5,10 @@ import httpx
 
 PROVIDERS = []
 if os.getenv("GEMINI_API_KEY"):
-    PROVIDERS.append(("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
-                      os.environ["GEMINI_API_KEY"], os.getenv("GEMINI_MODEL", "gemini-2.0-flash")))
+    # Comma-separated, tried in order: older models are retired for new keys, newer ones can be overloaded.
+    for m in os.getenv("GEMINI_MODELS", "gemini-3.6-flash,gemini-3.8-flash,gemini-3.5-flash").split(","):
+        PROVIDERS.append(("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+                          os.environ["GEMINI_API_KEY"], m.strip()))
 if os.getenv("GROQ_API_KEY"):
     PROVIDERS.append(("https://api.groq.com/openai/v1/chat/completions",
                       os.environ["GROQ_API_KEY"], os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")))
@@ -21,7 +23,8 @@ async def complete(messages: list[dict]) -> str:
             try:
                 r = await client.post(url, headers={"Authorization": f"Bearer {key}"},
                                       json={"model": model, "messages": messages,
-                                            "temperature": 0.5, "max_tokens": 800})
+                                            "temperature": 0.5, "max_tokens": 2500,
+                                            **({"reasoning_effort": "low"} if "generativelanguage" in url else {})})
                 r.raise_for_status()
                 return r.json()["choices"][0]["message"]["content"]
             except Exception as e:  # try next provider

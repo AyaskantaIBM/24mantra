@@ -11,7 +11,7 @@ Neon Postgres (free)  <---  /admin?key=...  (transcripts + CSV download)
 Unlike a hosted Gemini page, every message passes through *your* server, so you own the history.
 
 ## 1. Free accounts / keys
-- Gemini key: https://aistudio.google.com/apikey
+- Gemini key: https://aistudio.google.com/apikey  (models change often; override with env GEMINI_MODELS="model1,model2" if you get 404s)
 - (optional fallback) Groq key: https://console.groq.com/keys
 - Neon Postgres: https://neon.tech -> new project -> copy connection string -> `DATABASE_URL`
 - GitHub account (Render deploys from a repo)
