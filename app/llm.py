@@ -24,8 +24,9 @@ async def stream(messages: list[dict]):
         started = False
         try:
             body = {"model": model, "messages": messages, "temperature": 0.5, "max_tokens": 2500, "stream": True,
-                    **({"reasoning_effort": "low"} if "generativelanguage" in url else {})}
-            async with httpx.AsyncClient(timeout=httpx.Timeout(60, connect=10)) as client:
+                    **({"reasoning_effort": os.getenv("GEMINI_REASONING", "low")} if "generativelanguage" in url else {})}
+            # read=15: a model that sends nothing for 15s (overloaded / over-thinking) is skipped for the next one
+            async with httpx.AsyncClient(timeout=httpx.Timeout(connect=10, read=float(os.getenv("FIRST_TOKEN_TIMEOUT", "15")), write=10, pool=10)) as client:
                 async with client.stream("POST", url, headers={"Authorization": f"Bearer {key}"}, json=body) as r:
                     if r.status_code >= 400:
                         await r.aread()
