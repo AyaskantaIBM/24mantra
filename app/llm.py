@@ -7,7 +7,7 @@ import httpx
 PROVIDERS = []
 if os.getenv("GEMINI_API_KEY"):
     # Comma-separated, tried in order: older models are retired for new keys, newer ones can be overloaded.
-    for m in os.getenv("GEMINI_MODELS", "gemini-3.6-flash,gemini-3.8-flash,gemini-3.5-flash").split(","):
+    for m in os.getenv("GEMINI_MODELS", "gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash,gemini-3.5-flash").split(","):
         PROVIDERS.append(("https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
                           os.environ["GEMINI_API_KEY"], m.strip()))
 if os.getenv("GROQ_API_KEY"):
@@ -26,7 +26,7 @@ async def stream(messages: list[dict]):
             body = {"model": model, "messages": messages, "temperature": 0.5, "max_tokens": 2500, "stream": True,
                     **({"reasoning_effort": os.getenv("GEMINI_REASONING", "low")} if "generativelanguage" in url else {})}
             # read=15: a model that sends nothing for 15s (overloaded / over-thinking) is skipped for the next one
-            async with httpx.AsyncClient(timeout=httpx.Timeout(connect=10, read=float(os.getenv("FIRST_TOKEN_TIMEOUT", "15")), write=10, pool=10)) as client:
+            async with httpx.AsyncClient(timeout=httpx.Timeout(connect=10, read=float(os.getenv("FIRST_TOKEN_TIMEOUT", "12")), write=10, pool=10)) as client:
                 async with client.stream("POST", url, headers={"Authorization": f"Bearer {key}"}, json=body) as r:
                     if r.status_code >= 400:
                         await r.aread()
