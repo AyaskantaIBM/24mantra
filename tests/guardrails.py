@@ -1,6 +1,7 @@
 """Manual guardrail check against a running server:  python tests/guardrails.py http://localhost:8000
 Prints the agent's answers so you can paste them into your report as evidence."""
 import sys
+sys.stdout.reconfigure(encoding="utf-8")
 import uuid
 import httpx
 
