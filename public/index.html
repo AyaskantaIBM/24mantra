@@ -15,8 +15,9 @@ form{display:flex;gap:8px;padding:12px;max-width:760px;width:100%;margin:0 auto;
 input{flex:1;padding:12px;border:1px solid #bbb;border-radius:8px;font-size:16px}
 button.send{padding:0 20px;background:#2e7d32;color:#fff;border:0;border-radius:8px;font-size:16px;cursor:pointer}
 button:disabled{opacity:.5}
+#new{float:right;background:#fff;color:#2e7d32;border:0;border-radius:8px;padding:6px 12px;font-weight:600;cursor:pointer}
 </style></head><body>
-<header>24 Mantra Organic — Shopping Advisor<small>Simulated AI advisor, not an official representative. You make the final purchase decision. Chats are stored for a class project.</small></header>
+<header><button id="new" type="button" title="Start a fresh conversation">+ New chat</button>24 Mantra Organic — Shopping Advisor<small>Simulated AI advisor, not an official representative. You make the final purchase decision. Chats are stored for a class project.</small></header>
 <div id="log"></div>
 <div id="chips"></div>
 <form id="f"><input id="t" placeholder="Type your message…" autocomplete="off"><button class="send" id="b">Send</button></form>
@@ -41,5 +42,8 @@ async function send(msg){
   catch{w.textContent="Network error, please retry."}
   b.disabled=false;t.focus();
 }
+document.getElementById("new").onclick=()=>{
+  if(!confirm("Start a new chat? Your current conversation stays saved but won't be shown here."))return;
+  localStorage.setItem("sid",crypto.randomUUID());location.reload()};
 document.getElementById("f").onsubmit=e=>{e.preventDefault();const m=t.value.trim();if(m)send(m)};
 </script></body></html>
