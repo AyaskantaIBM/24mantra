@@ -10,7 +10,7 @@ from collections import defaultdict, deque
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import HTMLResponse, PlainTextResponse, Response
+from fastapi.responses import HTMLResponse, PlainTextResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
@@ -90,6 +90,37 @@ async def chat(body: ChatIn, request: Request):
         raise HTTPException(502, "The advisor is busy right now. Please try again shortly.")
     db.save(body.sid, "assistant", reply)
     return {"reply": reply}
+
+
+@app.post("/api/chat/stream")
+async def chat_stream(body: ChatIn, request: Request):
+    msg = body.message.strip()
+    if not SID.match(body.sid) or not msg or len(msg) > 2000:
+        raise HTTPException(400, "bad request")
+    ip = (request.headers.get("x-forwarded-for") or request.client.host).split(",")[0]
+    rate_limit(ip)
+    rate_limit("sid:" + body.sid)
+    db.save(body.sid, "user", msg)
+    hist = db.history(body.sid)[-30:]
+    found = catalog.search(" ".join(m["content"] for m in hist if m["role"] == "user")[-600:])
+    ctx = "VERIFIED CATALOG EXCERPT (JSON): " + json.dumps(found, ensure_ascii=False)
+    messages = [{"role": "system", "content": SYSTEM + "\n\n" + ctx}] + hist
+
+    async def gen():
+        parts = []
+        try:
+            async for piece in llm.stream(messages):
+                parts.append(piece)
+                yield piece
+        except Exception as e:
+            print("LLM error:", e)
+            if not parts:
+                yield "The advisor is busy right now. Please try again shortly."
+        if parts:
+            db.save(body.sid, "assistant", "".join(parts))
+
+    return StreamingResponse(gen(), media_type="text/plain; charset=utf-8",
+                             headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"})
 
 
 # ---- admin: readable transcripts + CSV export ----

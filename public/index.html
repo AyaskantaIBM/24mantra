@@ -15,6 +15,10 @@ form{display:flex;gap:8px;padding:12px;max-width:760px;width:100%;margin:0 auto;
 input{flex:1;padding:12px;border:1px solid #bbb;border-radius:8px;font-size:16px}
 button.send{padding:0 20px;background:#2e7d32;color:#fff;border:0;border-radius:8px;font-size:16px;cursor:pointer}
 button:disabled{opacity:.5}
+.dots i{display:inline-block;width:7px;height:7px;margin-right:4px;border-radius:50%;background:#2e7d32;animation:bounce 1.2s infinite ease-in-out}
+.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
+.think{color:#666;font-size:14px}
+@keyframes bounce{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-4px)}}
 #new{float:right;background:#fff;color:#2e7d32;border:0;border-radius:8px;padding:6px 12px;font-weight:600;cursor:pointer}
 </style></head><body>
 <header><button id="new" type="button" title="Start a fresh conversation">+ New chat</button>24 Mantra Organic — Shopping Advisor<small>Simulated AI advisor, not an official representative. You make the final purchase decision. Chats are stored for a class project.</small></header>
@@ -36,9 +40,14 @@ function add(role,text){const d=document.createElement("div");d.className="m "+r
   .forEach(s=>{const c=document.createElement("button");c.type="button";c.className="chip";c.textContent=s;c.onclick=()=>send(s);chips.appendChild(c)});
 fetch("/api/history?sid="+sid).then(r=>r.json()).then(h=>{h.forEach(m=>add(m.role,m.content));if(h.length>1)chips.remove()});
 async function send(msg){
-  chips.remove();t.value="";b.disabled=true;add("user",msg);const w=add("assistant","…");
-  try{const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({sid,message:msg})});
-    const j=await r.json();w.innerHTML=md(j.reply||j.detail||"Error")}
+  chips.remove();t.value="";b.disabled=true;add("user",msg);
+  const w=add("assistant","");w.innerHTML='<span class="dots"><i></i><i></i><i></i></span> <span class="think">Thinking…</span>';
+  try{const r=await fetch("/api/chat/stream",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({sid,message:msg})});
+    if(!r.ok){const j=await r.json().catch(()=>({}));w.textContent=j.detail||"Something went wrong, please retry."}
+    else{const rd=r.body.getReader(),dec=new TextDecoder();let acc="";
+      for(;;){const {done,value}=await rd.read();if(done)break;acc+=dec.decode(value,{stream:true});
+        w.innerHTML=md(acc);log.scrollTop=log.scrollHeight}
+      if(!acc)w.textContent="No reply received, please retry."}}
   catch{w.textContent="Network error, please retry."}
   b.disabled=false;t.focus();
 }

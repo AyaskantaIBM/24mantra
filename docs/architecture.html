@@ -1,0 +1,241 @@
+<title>24 Mantra Advisor Architecture</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: one reading column; two wide figures (architecture, request flow) that scroll sideways on phones; two compact tables. */
+:root{
+  --bg:#f5f8f3; --surface:#ffffff; --fg:#17261b; --muted:#566a5b; --line:#c8d4c8;
+  --accent:#2e7d32; --accent-soft:#e2f0e1;
+  --ext:#2f5b99; --ext-soft:#e5edf8;
+  --data:#a05f00; --data-soft:#fbf0d8;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Space Grotesk","Inter",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1610; --surface:#16211a; --fg:#e3ece4; --muted:#9aab9f; --line:#2b3b2f;
+  --accent:#74d37d; --accent-soft:#183221; --ext:#8db3ea; --ext-soft:#18253a; --data:#e2b457; --data-soft:#2c2410; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e1610; --surface:#16211a; --fg:#e3ece4; --muted:#9aab9f; --line:#2b3b2f;
+  --accent:#74d37d; --accent-soft:#183221; --ext:#8db3ea; --ext-soft:#18253a; --data:#e2b457; --data-soft:#2c2410; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 var(--sans);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+main{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(26px,4vw,36px);line-height:1.15}
+h2{font-size:21px;margin-bottom:6px}
+p{margin:0;max-width:68ch}
+.lead{color:var(--muted);margin-top:10px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 12px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.sw{width:14px;height:14px;border-radius:3px;border:1.5px solid}
+.sw.o{background:var(--accent-soft);border-color:var(--accent)}
+.sw.e{background:var(--ext-soft);border-color:var(--ext)}
+.sw.d{background:var(--data-soft);border-color:var(--data)}
+.sw.x{border-style:dashed;border-color:var(--muted)}
+figure{margin:0}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.scroll svg{display:block;width:100%;min-width:760px;height:auto;color:var(--muted)}
+figcaption{margin-top:10px;font-size:13.5px;color:var(--muted);max-width:75ch}
+svg text{font-family:var(--sans);font-size:12px;fill:var(--fg)}
+svg .b{font-weight:600}
+svg .m{fill:var(--muted);font-size:11px}
+svg .lbl{paint-order:stroke;stroke:var(--surface);stroke-width:5px;stroke-linejoin:round}
+svg .box{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+svg .ours{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}
+svg .ext{fill:var(--ext-soft);stroke:var(--ext);stroke-width:1.5}
+svg .data{fill:var(--data-soft);stroke:var(--data);stroke-width:1.5}
+svg .opt{stroke-dasharray:5 4}
+svg .ln{stroke:var(--muted);stroke-width:1.5;fill:none}
+svg .ret{stroke:var(--muted);stroke-width:1.5;fill:none;stroke-dasharray:5 4}
+svg .life{stroke:var(--line);stroke-width:1.2;stroke-dasharray:3 5}
+svg .band{fill:var(--accent-soft)}
+svg .band-t{fill:var(--accent);font-weight:600;font-size:12px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{text-align:left;padding:10px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600;white-space:nowrap}
+.note{font-size:13.5px;color:var(--muted);margin-top:10px}
+</style>
+
+<main>
+  <header>
+    <div class="eyebrow">System design</div>
+    <h1>24 Mantra Advisor: how the app is built and how one message travels</h1>
+    <p class="lead">A chat advisor that runs on free services only. Every message passes through our own server, so each conversation is saved in a database we control and can read later.</p>
+  </header>
+
+  <section>
+    <h2>Architecture</h2>
+    <p>The browser never talks to the AI directly. It talks to a FastAPI server on Render, which checks the request, finds matching products, calls the AI, and records both sides of the chat in Postgres.</p>
+    <div class="legend" aria-hidden="true">
+      <span><i class="sw o"></i>Our code</span>
+      <span><i class="sw e"></i>External AI API</span>
+      <span><i class="sw d"></i>Database</span>
+      <span><i class="sw x"></i>Optional</span>
+    </div>
+    <figure>
+      <div class="scroll">
+      <svg viewBox="0 0 960 470" role="img" aria-label="Architecture: the visitor's browser sends HTTPS requests to a FastAPI server on Render. The server calls the Gemini API, with Groq as optional fallback, and stores every message in Neon Postgres. GitHub deploys to Render; the owner reads chats through the admin page.">
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9 z" fill="currentColor"/></marker></defs>
+
+        <rect class="box" x="20" y="90" width="160" height="110" rx="8"/>
+        <text class="b" x="100" y="118" text-anchor="middle">Visitor's browser</text>
+        <text x="100" y="140" text-anchor="middle">Chat page (HTML + JS)</text>
+        <text class="m" x="100" y="160" text-anchor="middle">session id kept in</text>
+        <text class="m" x="100" y="175" text-anchor="middle">localStorage</text>
+
+        <rect class="box" x="20" y="300" width="160" height="60" rx="8"/>
+        <text class="b" x="100" y="326" text-anchor="middle">You / professor</text>
+        <text class="m" x="100" y="344" text-anchor="middle">reads every chat</text>
+
+        <rect class="ours" x="280" y="40" width="360" height="330" rx="10"/>
+        <text class="b" x="300" y="62">Render free web service · FastAPI + uvicorn</text>
+
+        <rect class="box" x="300" y="76" width="320" height="40" rx="5"/>
+        <text class="b" x="312" y="93">Rate limit</text><text class="m" x="312" y="108">15 messages per minute per IP and per session</text>
+        <rect class="box" x="300" y="124" width="320" height="40" rx="5"/>
+        <text class="b" x="312" y="141">Chat API</text><text class="m" x="312" y="156">POST /api/chat · GET /api/history</text>
+        <rect class="box" x="300" y="172" width="320" height="40" rx="5"/>
+        <text class="b" x="312" y="189">Catalog search</text><text class="m" x="312" y="204">top 12 of 60 verified products (catalog.json)</text>
+        <rect class="box" x="300" y="220" width="320" height="40" rx="5"/>
+        <text class="b" x="312" y="237">LLM client</text><text class="m" x="312" y="252">tries Gemini models in order, then Groq</text>
+        <rect class="box" x="300" y="268" width="320" height="40" rx="5"/>
+        <text class="b" x="312" y="285">Admin</text><text class="m" x="312" y="300">/admin and /admin/export.csv, protected by ADMIN_KEY</text>
+        <rect class="box" x="300" y="316" width="320" height="36" rx="5"/>
+        <text class="b" x="312" y="338">Health</text><text class="m" x="364" y="338">GET /health, used as a keep-awake ping</text>
+
+        <rect class="ext" x="770" y="60" width="170" height="90" rx="8"/>
+        <text class="b" x="855" y="86" text-anchor="middle">Gemini API</text>
+        <text class="m" x="855" y="104" text-anchor="middle">free tier</text>
+        <text x="855" y="122" text-anchor="middle">gemini-3.6-flash first,</text>
+        <text x="855" y="138" text-anchor="middle">3.8 and 3.5 as backup</text>
+        <rect class="ext opt" x="770" y="166" width="170" height="48" rx="8"/>
+        <text class="b" x="855" y="186" text-anchor="middle">Groq (optional)</text>
+        <text class="m" x="855" y="203" text-anchor="middle">fallback if Gemini fails</text>
+
+        <rect class="data" x="770" y="262" width="170" height="110" rx="8"/>
+        <text class="b" x="855" y="288" text-anchor="middle">Neon Postgres</text>
+        <text class="m" x="855" y="305" text-anchor="middle">free tier</text>
+        <text x="855" y="326" text-anchor="middle">table: messages</text>
+        <text class="m" x="855" y="344" text-anchor="middle">session_id · role</text>
+        <text class="m" x="855" y="359" text-anchor="middle">content · created_at</text>
+
+        <rect class="box" x="300" y="410" width="150" height="44" rx="6"/>
+        <text class="b" x="375" y="429" text-anchor="middle">GitHub repo</text>
+        <text class="m" x="375" y="445" text-anchor="middle">AyaskantaIBM/24mantra</text>
+        <rect class="box opt" x="500" y="410" width="140" height="44" rx="6"/>
+        <text class="b" x="570" y="429" text-anchor="middle">UptimeRobot</text>
+        <text class="m" x="570" y="445" text-anchor="middle">not set up yet</text>
+
+        <line class="ln" x1="182" y1="145" x2="298" y2="145" marker-start="url(#ah)" marker-end="url(#ah)"/>
+        <text class="m" x="240" y="137" text-anchor="middle">HTTPS</text>
+        <line class="ln" x1="182" y1="326" x2="298" y2="292" marker-end="url(#ah)"/>
+        <text class="m" x="186" y="347">?key=ADMIN_KEY</text>
+        <line class="ln" x1="620" y1="240" x2="768" y2="112" marker-end="url(#ah)"/>
+        <text class="m lbl" x="694" y="176" text-anchor="middle">LLM call</text>
+        <line class="ret" x1="620" y1="248" x2="768" y2="200" marker-end="url(#ah)"/>
+        <text class="m lbl" x="694" y="227" text-anchor="middle">if Gemini fails</text>
+        <line class="ln" x1="642" y1="332" x2="768" y2="332" marker-start="url(#ah)" marker-end="url(#ah)"/>
+        <text class="m" x="705" y="322" text-anchor="middle">save / read chats</text>
+        <line class="ln" x1="375" y1="408" x2="375" y2="372" marker-end="url(#ah)"/>
+        <text class="m" x="385" y="394">auto-deploy on push</text>
+        <line class="ret" x1="570" y1="408" x2="570" y2="354" marker-end="url(#ah)"/>
+        <text class="m" x="580" y="394">ping every 5 min</text>
+      </svg>
+      </div>
+      <figcaption>Everything the visitor types goes to the Render server first. The server is the only part that holds the Gemini key and the database login, and it writes each message to Neon before and after the AI call.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Functional flow of one conversation</h2>
+    <p>Steps 1 to 4 run when the page opens. Steps 5 to 12 run every time the visitor sends a message.</p>
+    <figure>
+      <div class="scroll">
+      <svg viewBox="0 0 960 520" role="img" aria-label="Sequence of one chat message: page load fetches history from Postgres; sending a message passes the rate limit, saves the user message, searches the catalog, calls Gemini with the system prompt and recent history, saves the reply and returns it to the browser.">
+        <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 L10 5 L0 9 z" fill="currentColor"/></marker></defs>
+
+        <line class="life" x1="110" y1="42" x2="110" y2="512"/>
+        <line class="life" x1="360" y1="42" x2="360" y2="512"/>
+        <line class="life" x1="610" y1="42" x2="610" y2="512"/>
+        <line class="life" x1="850" y1="42" x2="850" y2="512"/>
+        <rect class="box" x="35" y="8" width="150" height="34" rx="6"/><text class="b" x="110" y="29" text-anchor="middle">Browser</text>
+        <rect class="ours" x="270" y="8" width="180" height="34" rx="6"/><text class="b" x="360" y="29" text-anchor="middle">FastAPI on Render</text>
+        <rect class="data" x="535" y="8" width="150" height="34" rx="6"/><text class="b" x="610" y="29" text-anchor="middle">Neon Postgres</text>
+        <rect class="ext" x="775" y="8" width="150" height="34" rx="6"/><text class="b" x="850" y="29" text-anchor="middle">Gemini API</text>
+
+        <rect class="band" x="20" y="56" width="920" height="22" rx="4"/>
+        <text class="band-t" x="30" y="71">When the page opens</text>
+
+        <line class="ln" x1="112" y1="108" x2="358" y2="108" marker-end="url(#ah2)"/>
+        <text class="lbl" x="235" y="100" text-anchor="middle">1  GET /api/history?sid=…</text>
+        <line class="ln" x1="362" y1="136" x2="608" y2="136" marker-end="url(#ah2)"/>
+        <text class="lbl" x="485" y="128" text-anchor="middle">2  SELECT messages of this sid</text>
+        <line class="ret" x1="608" y1="162" x2="362" y2="162" marker-end="url(#ah2)"/>
+        <text class="lbl" x="485" y="154" text-anchor="middle">3  rows</text>
+        <line class="ret" x1="358" y1="190" x2="112" y2="190" marker-end="url(#ah2)"/>
+        <text class="lbl" x="235" y="182" text-anchor="middle">4  history, or welcome message</text>
+
+        <rect class="band" x="20" y="208" width="920" height="22" rx="4"/>
+        <text class="band-t" x="30" y="223">When the visitor sends a message</text>
+
+        <line class="ln" x1="112" y1="260" x2="358" y2="260" marker-end="url(#ah2)"/>
+        <text class="lbl" x="235" y="252" text-anchor="middle">5  POST /api/chat {sid, message}</text>
+        <rect class="ours" x="245" y="274" width="230" height="26" rx="5"/>
+        <text x="360" y="291" text-anchor="middle">6  rate limit and input checks</text>
+        <line class="ln" x1="362" y1="332" x2="608" y2="332" marker-end="url(#ah2)"/>
+        <text class="lbl" x="485" y="324" text-anchor="middle">7  INSERT user msg, SELECT last 30</text>
+        <rect class="ours" x="235" y="346" width="250" height="26" rx="5"/>
+        <text x="360" y="363" text-anchor="middle">8  search catalog, keep 12 matches</text>
+        <line class="ln" x1="362" y1="404" x2="848" y2="404" marker-end="url(#ah2)"/>
+        <text class="lbl" x="605" y="396" text-anchor="middle">9  system prompt + catalog excerpt + history</text>
+        <line class="ret" x1="848" y1="430" x2="362" y2="430" marker-end="url(#ah2)"/>
+        <text class="lbl" x="605" y="422" text-anchor="middle">10  reply (next model if one errors)</text>
+        <line class="ln" x1="362" y1="458" x2="608" y2="458" marker-end="url(#ah2)"/>
+        <text class="lbl" x="485" y="450" text-anchor="middle">11  INSERT assistant reply</text>
+        <line class="ret" x1="358" y1="490" x2="112" y2="490" marker-end="url(#ah2)"/>
+        <text class="lbl" x="235" y="482" text-anchor="middle">12  { reply } shown in chat</text>
+      </svg>
+      </div>
+      <figcaption>The visitor's message is saved at step 7, before the AI is called. If the rate limit trips at step 6 the server answers 429. If every model fails at step 9 the server answers 502 and the chat shows "advisor is busy", but the visitor's message is already stored.</figcaption>
+    </figure>
+    <p class="note">A "New chat" click creates a new session id in the browser. The old conversation stays in the database and in the admin page.</p>
+  </section>
+
+  <section>
+    <h2>How the sales-agent rules are enforced</h2>
+    <p style="margin-bottom:12px">Each rule from the assignment maps to a specific place in the app.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Rule</th><th>Where it is enforced</th></tr></thead>
+        <tbody>
+          <tr><td>No invented prices or products</td><td>Only the 12 matching items from catalog.json reach the model, and the system prompt tells it to mark anything else as unverified.</td></tr>
+          <tr><td>Customer decides</td><td>The system prompt forbids finalising a basket. The app has no cart or checkout code, so it cannot place an order.</td></tr>
+          <tr><td>Official links only</td><td>Product links come from the catalog snapshot; otherwise the model points to the homepage.</td></tr>
+          <tr><td>Not an official representative</td><td>Stated in the system prompt and in the banner at the top of the chat page.</td></tr>
+          <tr><td>Chat history kept</td><td>Steps 7 and 11 write every message to Neon; /admin and the CSV export read it back.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Free services used</h2>
+    <p style="margin-bottom:12px">None of these needed a payment method for this setup.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Service</th><th>Job</th><th>Limit to know</th></tr></thead>
+        <tbody>
+          <tr><td>Render</td><td>Runs the FastAPI server and serves the chat page</td><td>Sleeps after a period of inactivity; the first visit then takes about 50 seconds</td></tr>
+          <tr><td>Neon</td><td>Postgres database for chat history</td><td>Free-tier storage and compute caps</td></tr>
+          <tr><td>Gemini API</td><td>Writes the advisor's replies</td><td>Free-tier request quota; models change often, so the app tries several</td></tr>
+          <tr><td>GitHub</td><td>Holds the code; each push redeploys on Render</td><td>None that matters here</td></tr>
+          <tr><td>UptimeRobot</td><td>Optional ping to keep the server awake</td><td>Not set up yet</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
