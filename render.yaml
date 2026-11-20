@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: mantra-advisor
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: DATABASE_URL      # Neon connection string
+        sync: false
+      - key: GEMINI_API_KEY    # Google AI Studio (free)
+        sync: false
+      - key: GROQ_API_KEY      # optional fallback (free)
+        sync: false
+      - key: ADMIN_KEY         # your secret for /admin
+        sync: false

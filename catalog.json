@@ -1,0 +1,875 @@
+{
+ "_note": "Snapshot from https://24mantraorganic.com on 2026-11-20. Prices in INR; stock may change.",
+ "products": [
+  {
+   "name": "Organic Red Poha",
+   "category": "Cereals",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 95.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Made from organic red rice grown in Andhra Pradesh, India. Unlike regular poha, red poha is unpolished, retaining more of its natural fiber and essential nutrients. Its rich, earthy flavor and firm texture make it a wholesome choice for a filling breakfast or snack. Packed with goodness and free from pesticides, our red poha is a delicious step tow",
+   "url": "https://24mantraorganic.com/products/organic-red-poha-1"
+  },
+  {
+   "name": "Organic Flax Seeds",
+   "category": "Super Food",
+   "variants": [
+    {
+     "size": "200 g",
+     "price_inr": 80.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Tiny but mighty, flax seeds are a nutritional powerhouse packed with plant-based Omega-3 (ALA), protein, fiber , and essential nutrients. These seeds offer a simple, natural way to enrich your everyday meals with goodness that supports overall wellness. Enjoy them freshly ground using a mixer just before consumption to preserve nutrients. Stir into",
+   "url": "https://24mantraorganic.com/products/organic-flax-seeds-3"
+  },
+  {
+   "name": "Organic Chilli Powder",
+   "category": "Spice Powders",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 75.0,
+     "in_stock": true
+    },
+    {
+     "size": "200 g",
+     "price_inr": 150.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Grown organically in the fertile soils of Tamil Nadu and Andhra Pradesh, our Chilli Powder brings natural heat and vibrant red color to your cooking. It’s sun-dried, ground without additives, and free from synthetic color or preservatives—just pure spice with bold character. ✨ Pure & unadulterated ❤️ Deep red hue without synthetic color 🌱 Organical",
+   "url": "https://24mantraorganic.com/products/organic-chilli-powder-3"
+  },
+  {
+   "name": "Organic Wheat Grass Powder",
+   "category": "Super Food",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 275.0,
+     "in_stock": true
+    }
+   ],
+   "description": "24 Mantra Organic Wheat Grass Powder is made from the 21-day young shoots of the wheat plant , a stage when the grass is at its nutritional peak. This vibrant green powder is a natural source of plant protein, fiber, and essential minerals , making it an excellent addition to your daily wellness routine. Whether you're looking to support detox , im",
+   "url": "https://24mantraorganic.com/products/organic-wheat-grass-powder-3"
+  },
+  {
+   "name": "Organic Cumin Seed",
+   "category": "Whole Spices",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 130.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Sourced from organic farms in Rajasthan, these Cumin Seeds are prized for their warm, earthy aroma and robust flavor. Whether you're dry roasting or using them in tadkas, they deliver pure, chemical-free authenticity to your kitchen. 😋 Aromatic and flavorful 🌱 Organically grown and sun-dried 💗 Great for dals, curries, and masalas 🚫 No chemical proc",
+   "url": "https://24mantraorganic.com/products/organic-cumin-seed-3"
+  },
+  {
+   "name": "Organic Mustard Seeds Small",
+   "category": "Whole Spices",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 38.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Organically grown in the plains of Madhya Pradesh, these Mustard Seeds offer a clean, sharp pungency that’s perfect for Indian cooking. Their natural intensity and purity shine in tadkas, pickles, and more. 😋 Clean and crisp flavor 🌱 Naturally grown, unpolished 💗 Ideal for seasoning and tempering",
+   "url": "https://24mantraorganic.com/products/organic-mustard-seeds-small-3"
+  },
+  {
+   "name": "Puffed Rice",
+   "category": "Cereals",
+   "variants": [
+    {
+     "size": "200 g",
+     "price_inr": 45.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Made from organic rice grown in Andhra Pradesh, our Puffed Rice is light, airy, and crisp. A pantry essential for healthy snacking or making quick bites like bhel and murmura upma, it's free from additives and preservatives. Just pure, clean crunch. 😋 Light, crisp & easy to digest 💗 Great for bhel, chivda & quick snacks 🚫 Made without chemicals or ",
+   "url": "https://24mantraorganic.com/products/puffed-rice-4"
+  },
+  {
+   "name": "Organic Wild Honey",
+   "category": "Sweetener",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 290.0,
+     "in_stock": true
+    },
+    {
+     "size": "250 g",
+     "price_inr": 150.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Sourced from the pristine forests of Uttar Pradesh and Uttarakhand, our Organic Wild Honey is a Himalayan Multiflower variety—collected by bees from a diverse range of wild flora. It is raw, unfiltered, and unheated, preserving its natural enzymes, aroma, and floral richness. With every spoon, you experience the untouched purity of the mountains. 🏞",
+   "url": "https://24mantraorganic.com/products/organic-wild-honey-3"
+  },
+  {
+   "name": "Organic Bajra Flour",
+   "category": "Flours",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 55.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Sourced from Rajasthan, 24 Mantra Organic Bajra Flour is a winter favorite known for its rich, nutty taste. Make warm, rustic rotis, or add it to your meals for a wholesome touch. Our bajra is traditionally cleaned, ground, and sieved, preserving its natural goodness. Bring the rich, nutty flavor and nutritional benefits of gluten-free organic bajr",
+   "url": "https://24mantraorganic.com/products/organic-bajra-flour-3"
+  },
+  {
+   "name": "Organic Coriander Seed",
+   "category": "Whole Spices",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 65.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Organically cultivated in Karnataka, these Coriander Seeds bring a warm, citrusy aroma to your kitchen. Their flavor stays intact thanks to traditional sun-drying and no processing—ideal for toasting or grinding fresh. 😋 Rich aroma and flavor ✨ Whole and unprocessed 💗 Great for spice mixes and tadkas 🌱 From certified organic farms",
+   "url": "https://24mantraorganic.com/products/organic-coriander-seed-3"
+  },
+  {
+   "name": "Cold Pressed Groundnut oil",
+   "category": "Cold Pressed Oils",
+   "variants": [
+    {
+     "size": "1 L",
+     "price_inr": 550.0,
+     "in_stock": true
+    },
+    {
+     "size": "5 L",
+     "price_inr": 2695.0,
+     "in_stock": true
+    }
+   ],
+   "description": "24 Mantra Organic Cold Pressed Groundnut oil is your perfect cooking companion. Made from premium groundnuts grown in Andhra Pradesh and Karnataka, it is cold-pressed, unrefined, and double-filtered to retain natural nutrients and authentic taste. Whether you're sautéing, frying, or making traditional delicacies, this oil enhances every dish with i",
+   "url": "https://24mantraorganic.com/products/cold-pressed-groundnut-oil"
+  },
+  {
+   "name": "Organic Raw Peanuts",
+   "category": "Dal/Pulses/Beans",
+   "variants": [
+    {
+     "size": "1 kg",
+     "price_inr": 310.0,
+     "in_stock": true
+    },
+    {
+     "size": "500 g",
+     "price_inr": 155.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Harvested from organic farms in Karnataka, Maharashtra, Andhra Pradesh, and Telangana, these raw peanuts are unroasted and unprocessed. Ideal for roasting, snacking, or adding crunch to chutneys and salads—just clean, protein-rich goodness. 💗 Unroasted, chemical-free whole peanuts 😋 Great for snacking or cooking 🌱 Sourced from certified organic far",
+   "url": "https://24mantraorganic.com/products/organic-raw-peanuts-3"
+  },
+  {
+   "name": "Organic Sugar",
+   "category": "Sweetener",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 75.0,
+     "in_stock": true
+    },
+    {
+     "size": "1 kg",
+     "price_inr": 145.0,
+     "in_stock": true
+    }
+   ],
+   "description": "24 Mantra Organic Sugar is made from organically grown sugarcane in Uttarakhand, without the use of chemical refining or bleaching. With its clean sweetness and fine granules, it blends effortlessly into tea, coffee, desserts, and everyday cooking. Pure, natural, and free from artificial additives. 🚫 Free from chemical refining and bleaching 😋 Fine",
+   "url": "https://24mantraorganic.com/products/organic-sugar-3"
+  },
+  {
+   "name": "Organic Tur Dal",
+   "category": "Dal/Pulses/Beans",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 165.0,
+     "in_stock": true
+    },
+    {
+     "size": "1 kg",
+     "price_inr": 330.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Sourced from organic farms in Maharashtra, 24 Mantra Organic Tur Dal has a slightly nutty taste and thick consistency when cooked. A staple in Indian households, it’s perfect for making traditional dals and comforting home-cooked meals. 😋 Thick, creamy texture after cooking 💗 Great for everyday dals and comfort meals 🌱 Organically grown without che",
+   "url": "https://24mantraorganic.com/products/organic-tur-dal-3"
+  },
+  {
+   "name": "Cold Pressed Sunflower Oil",
+   "category": "Cold Pressed Oils",
+   "variants": [
+    {
+     "size": "1 L",
+     "price_inr": 395.0,
+     "in_stock": true
+    },
+    {
+     "size": "5 L",
+     "price_inr": 1950.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Light, nutritious, and packed with natural goodness—24 Mantra Organic Cold-Pressed Sunflower Oil is a heart-friendly choice for your everyday cooking. Made from premium sunflower seeds grown in Andhra Pradesh and Karnataka, it is cold-pressed, unrefined, and double-filtered to preserve its natural nutrients and mild, delicate flavor. Whether used f",
+   "url": "https://24mantraorganic.com/products/cold-pressed-sunflower-oil"
+  },
+  {
+   "name": "Saindhava Lavana Powder",
+   "category": "Healthy Salt",
+   "variants": [
+    {
+     "size": "1 kg",
+     "price_inr": 120.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Mined from ancient deposits in the Himalayas, our Rock Salt Powder is minimally processed to retain its natural crystal structure. A kitchen essential for fasting recipes and daily seasoning, it’s a pure, mineral-rich alternative to regular salt. ✨ Naturally mineral-rich 🚫 No additives, anti-caking agents or bleaching 😋 Ideal for seasoning & fastin",
+   "url": "https://24mantraorganic.com/products/saindhava-lavana-powder-3"
+  },
+  {
+   "name": "Organic Red Stick Chilly",
+   "category": "Whole Spices",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 85.0,
+     "in_stock": true
+    }
+   ],
+   "description": "These whole Red Stick Chillies, cultivated organically in Tamil Nadu and Andhra Pradesh, are sun-dried to preserve their deep color and bold heat. Use them for tempering or grinding to make your own spice blends. ✨ Whole, sun-dried, and chemical-free 😋 Adds bold heat and color 💗 Can be ground fresh for custom blends 🌱 Sourced from certified organic",
+   "url": "https://24mantraorganic.com/products/organic-red-stick-chilly-1"
+  },
+  {
+   "name": "Organic Fenugreek Seeds",
+   "category": "Whole Spices",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 40.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Harvested from organic farms in Rajasthan, our Fenugreek Seeds offer a nutty bitterness that works beautifully in pickles, spice blends, and lentil dishes. They’re whole, natural, and completely free from synthetic coatings. ✨ Clean and whole seeds 🚫 Grown without synthetic inputs 😋 Great for pickling and spice mixes 🌱 100% natural",
+   "url": "https://24mantraorganic.com/products/organic-fenugreek-seeds-1"
+  },
+  {
+   "name": "Organic Ragi Flour",
+   "category": "Flours",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 75.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Sourced from Karnataka, Maharashtra, and Andhra Pradesh, these Ragi grains are not colored with any artificial colors. 24 Mantra Organic Ragi Flour is naturally gluten-free and full of earthy flavors. Perfect for making soft dosas, healthy porridge, or nutritious ladoos, this unpolished and chemical-free flour ensures purity in every meal. 💗 Natura",
+   "url": "https://24mantraorganic.com/products/organic-ragi-flour-1"
+  },
+  {
+   "name": "Organic Moong Dal",
+   "category": "Dal/Pulses/Beans",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 135.0,
+     "in_stock": true
+    },
+    {
+     "size": "1 kg",
+     "price_inr": 270.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Sourced from the organic farms of Maharashtra, Rajasthan, Karnataka, Madhya Pradesh, and Andhra Pradesh, 24 Mantra Organic Moong Dal is a kitchen essential known for its light texture and delicate flavor. It cooks quickly and blends effortlessly into comforting dals and khichdi. 😋 Mild, slightly sweet flavor with a soft texture 💗 Cooks quickly, per",
+   "url": "https://24mantraorganic.com/products/organic-moong-dal-1"
+  },
+  {
+   "name": "Organic Mullu Murukku",
+   "category": "Healthy Snacks",
+   "variants": [
+    {
+     "size": "150 g",
+     "price_inr": 99.0,
+     "in_stock": true
+    }
+   ],
+   "description": "A southern classic, this spiral-shaped, crunchy snack is made with rice flour and traditional spices. Each bite is a nod to festive homes in Tamil Nadu, where snacks like this are a daily ritual. Nostalgia. Purity. Flavor—Redefined. From handwritten family recipes to kitchen aromas that remind us of home, our traditional snacks are more than just t",
+   "url": "https://24mantraorganic.com/products/organic-mullu-murukku"
+  },
+  {
+   "name": "Organic Masala Peanut",
+   "category": "Healthy Snacks",
+   "variants": [
+    {
+     "size": "150 g",
+     "price_inr": 125.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Roasted organic peanuts tossed in a spicy flavorful coating—this classic snack offers bold flavor and satisfying crunch in every bite. A favorite with chai or as a mid-day pick-me-up. Nostalgia. Purity. Flavor—Redefined. From handwritten family recipes to kitchen aromas that remind us of home, our traditional snacks are more than just treats—they’r",
+   "url": "https://24mantraorganic.com/products/organic-masala-peanut"
+  },
+  {
+   "name": "Organic Thick Sev",
+   "category": "Healthy Snacks",
+   "variants": [
+    {
+     "size": "150 g",
+     "price_inr": 99.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Crisp, flavorful, and lightly spiced—our Thick Sev is made the traditional way with gram flour and a pinch of love. Enjoy it as a standalone treat or a crunchy topper on chaats and upmas. Nostalgia. Purity. Flavor—Redefined. From handwritten family recipes to kitchen aromas that remind us of home, our traditional snacks are more than just treats—th",
+   "url": "https://24mantraorganic.com/products/organic-thick-sev"
+  },
+  {
+   "name": "Organic Poha",
+   "category": "Cereals",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 85.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Light, nutritious, and easy to digest, 24 Mantra Organic Poha is made from high-quality organic rice, ensuring purity and great taste in every bite. Grown in Andhra Pradesh, India, our Poha is naturally processed to retain its nutritional goodness while offering a soft, fluffy texture when cooked. A versatile staple, it can be enjoyed as a wholesom",
+   "url": "https://24mantraorganic.com/products/organic-poha-1"
+  },
+  {
+   "name": "Organic Sonamasuri White Rice",
+   "category": "Cereals",
+   "variants": [
+    {
+     "size": "1 kg",
+     "price_inr": 120.0,
+     "in_stock": true
+    },
+    {
+     "size": "5 kg",
+     "price_inr": 575.0,
+     "in_stock": true
+    },
+    {
+     "size": "10 kg",
+     "price_inr": 1150.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Grown in Andhra Pradesh, India, 24 Mantra Organic Sonamasuri White Rice is cultivated without synthetic pesticides or fertilizers. This polished, medium-grain rice retains its natural taste and texture, making it a perfect choice for everyday meals. Its soft, fluffy texture and delicate aroma enhance your favourite dishes—from comforting home-cooke",
+   "url": "https://24mantraorganic.com/products/organic-sonamasuri-white-rice"
+  },
+  {
+   "name": "Organic 7 Grain Atta",
+   "category": "Flours",
+   "variants": [
+    {
+     "size": "1 kg",
+     "price_inr": 120.0,
+     "in_stock": true
+    },
+    {
+     "size": "5 kg",
+     "price_inr": 550.0,
+     "in_stock": true
+    }
+   ],
+   "description": "A wholesome blend of seven organic grains—wheat, ragi, soybean, green moong, barley, maize, and brown chana—carefully combined to bring you soft, fluffy rotis with every roll. Unlike typical multigrain flours, this atta contains a higher proportion of nutrient-rich grains compared to wheat, offering both variety and balance in your everyday meals. ",
+   "url": "https://24mantraorganic.com/products/organic-7-grain-atta-3"
+  },
+  {
+   "name": "Organic Chia Seed",
+   "category": "Super Food",
+   "variants": [
+    {
+     "size": "200 g",
+     "price_inr": 180.0,
+     "in_stock": true
+    },
+    {
+     "size": "350 g",
+     "price_inr": 350.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Packed with wholesome benefits, 24 Mantra Organic Chia Seeds are a convenient way to upgrade your everyday meals. These raw, whole seeds are naturally gluten-free and rich in fiber , helping support digestion and keep you feeling full for longer. Their mild, nutty flavor makes them a versatile addition — blend into smoothies, stir into yogurt, or u",
+   "url": "https://24mantraorganic.com/products/organic-chia-seed"
+  },
+  {
+   "name": "Organic Moringa Powder",
+   "category": "Super Food",
+   "variants": [
+    {
+     "size": "150 g",
+     "price_inr": 180.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Step into the world of holistic wellness with Moringa — often called the Miracle Tree for good reason. Sourced from organically grown Moringa leaves, this vibrant green powder is a natural, plant-based superfood rooted in India’s rich Ayurvedic tradition. Packed with protein, dietary fiber, and essential minerals like calcium , potassium , iron , a",
+   "url": "https://24mantraorganic.com/products/organic-moringa-powder-3"
+  },
+  {
+   "name": "Cold Pressed Organic Mustard Oil",
+   "category": "Cold Pressed Oils",
+   "variants": [
+    {
+     "size": "1 L",
+     "price_inr": 360.0,
+     "in_stock": true
+    },
+    {
+     "size": "5 L",
+     "price_inr": 1795.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Bold, pungent, and packed with benefits—24 Mantra Organic Cold-Pressed Mustard Oil is a staple in Indian kitchens for its rich aroma and powerful health properties. Made from premium mustard seeds grown in Madhya Pradesh and Rajasthan, it is cold-pressed, unrefined, and double-filtered to ensure purity and authentic taste. From traditional curries ",
+   "url": "https://24mantraorganic.com/products/cold-pressed-organic-mustard-oil"
+  },
+  {
+   "name": "Foxtail Millet",
+   "category": "Millets",
+   "variants": [
+    {
+     "size": "1 kg",
+     "price_inr": 290.0,
+     "in_stock": true
+    },
+    {
+     "size": "500 g",
+     "price_inr": 150.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Grown in the nutrient-rich soils of Karnataka and Tamil Nadu, Foxtail Millet is a wholesome grain with a mild, nutty flavor. Naturally gluten-free and versatile, it fits right into your everyday meals—whether you're making upma, khichdi, or millet rotis. Carefully processed without any polishing or additives, it's a clean and conscious addition to ",
+   "url": "https://24mantraorganic.com/products/foxtail-millet"
+  },
+  {
+   "name": "Little Millet",
+   "category": "Millets",
+   "variants": [
+    {
+     "size": "1 kg",
+     "price_inr": 290.0,
+     "in_stock": true
+    },
+    {
+     "size": "500 g",
+     "price_inr": 150.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Sourced from farms in Karnataka and Tamil Nadu, Little Millet is small in size but big on nutrition and flavor. With its light, fluffy texture, it cooks quickly and blends well into a variety of traditional and modern dishes—from pongal to millet salads. Grown without any chemical inputs, it’s a mindful choice for balanced, everyday eating. ✨ Natur",
+   "url": "https://24mantraorganic.com/products/little-millet-3"
+  },
+  {
+   "name": "Organic Turmeric Powder",
+   "category": "Whole Spices",
+   "variants": [
+    {
+     "size": "100 g",
+     "price_inr": 60.0,
+     "in_stock": true
+    },
+    {
+     "size": "200 g",
+     "price_inr": 120.0,
+     "in_stock": true
+    }
+   ],
+   "description": "This earthy and golden turmeric is cultivated in Karnataka using organic practices that retain its natural aroma and color. Ground from carefully selected, sun-dried rhizomes, it enhances everyday cooking with warmth and brightness—without chemical residues. ✨ Vibrant yellow from naturally grown turmeric 🚫 No artificial dyes or preservatives 😋 Care",
+   "url": "https://24mantraorganic.com/products/organic-turmeric-powder"
+  },
+  {
+   "name": "Organic Jaggery Powder",
+   "category": "Sweetener",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 85.0,
+     "in_stock": true
+    },
+    {
+     "size": "1 kg",
+     "price_inr": 160.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Made from organically grown sugarcane in Uttarakhand, 24 Mantra Organic Jaggery Powder is a natural, unrefined sweetener with a deep caramel-like flavor. Its fine texture makes it easy to mix into beverages, desserts, and traditional Indian sweets. Free from chemicals and artificial processing, it’s the perfect alternative to refined sugar. 🌱 Unref",
+   "url": "https://24mantraorganic.com/products/organic-jaggery-powder"
+  },
+  {
+   "name": "Organic Brown Sugar",
+   "category": "Sweetener",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 85.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Crafted from pure, organic sugarcane grown in Uttarakhand, 24 Mantra Organic Brown Sugar retains its natural molasses for a delicate sweetness and rich aroma. Its fine, moist texture makes it ideal for baking, beverages, and Indian sweets. No chemicals, no bleaching—just pure, organic sweetness. 😋 Naturally retains molasses for a rich flavor 💗 Perf",
+   "url": "https://24mantraorganic.com/products/organic-brown-sugar"
+  },
+  {
+   "name": "Organic Low GI Rice",
+   "category": "Cereals",
+   "variants": [
+    {
+     "size": "1 kg",
+     "price_inr": 150.0,
+     "in_stock": true
+    },
+    {
+     "size": "5 kg",
+     "price_inr": 750.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Active Mantras Low GI Rice is crafted for those seeking a healthier, more active lifestyle—without giving up the comfort of rice. Grown organically in Andhra Pradesh, this rice is made from carefully selected varieties known for their naturally low glycemic index. The secret lies in our farm-to-fork approach—using pure seeds, the right variety, cul",
+   "url": "https://24mantraorganic.com/products/organic-low-gi-rice-1"
+  },
+  {
+   "name": "Organic Peanut Chikki",
+   "category": "Chikki, Health Bars",
+   "variants": [
+    {
+     "size": "Pack of 10",
+     "price_inr": 100.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Made with premium organic peanuts from Karnataka and organic jaggery from Uttarakhand, this timeless treat offers a hearty crunch and a naturally sweet flavor, perfect for a quick energy boost or a wholesome dessert. Rediscover the joy of guilt-free snacking with 24 Mantra Organic’s Chikki range—where tradition meets purity. We stay true to nature ",
+   "url": "https://24mantraorganic.com/products/organic-peanut-chikki"
+  },
+  {
+   "name": "Organic Sesame Chikki",
+   "category": "Chikki, Health Bars",
+   "variants": [
+    {
+     "size": "Pack of 10",
+     "price_inr": 100.0,
+     "in_stock": true
+    }
+   ],
+   "description": "A traditional favorite crafted with organic sesame seeds from Rajasthan and organic jaggery from Uttarakhand. Rich in calcium, iron, and healthy fats, it’s a delicious way to add some nutrient-dense goodness to your day. Rediscover the joy of guilt-free snacking with 24 Mantra Organic’s Chikki range—where tradition meets purity. We stay true to nat",
+   "url": "https://24mantraorganic.com/products/organic-sesame-chikki"
+  },
+  {
+   "name": "Organic Bombay Mixture",
+   "category": "Healthy Snacks",
+   "variants": [
+    {
+     "size": "150 g",
+     "price_inr": 125.0,
+     "in_stock": true
+    }
+   ],
+   "description": "A bold and crunchy medley of sev, fried lentils, peanuts, and spices. This spicy-salty mix captures the vibrant flavors of Mumbai street food while keeping it clean, organic, and utterly snackable. Nostalgia. Purity. Flavor—Redefined. From handwritten family recipes to kitchen aromas that remind us of home, our traditional snacks are more than just",
+   "url": "https://24mantraorganic.com/products/organic-bombay-mixture"
+  },
+  {
+   "name": "Organic Shakkar Para",
+   "category": "Healthy Snacks",
+   "variants": [
+    {
+     "size": "150 g",
+     "price_inr": 125.0,
+     "in_stock": true
+    }
+   ],
+   "description": "A golden, crunchy delight sweetened with organic jaggery. This festive favorite is lovingly made with whole wheat flour and gently fried in cold-pressed oil for that perfect crispness and warm, caramelized sweetness. Nostalgia. Purity. Flavor—Redefined. From handwritten family recipes to kitchen aromas that remind us of home, our traditional snacks",
+   "url": "https://24mantraorganic.com/products/organic-shakkar-para"
+  },
+  {
+   "name": "Organic Quinoa",
+   "category": "Super Food",
+   "variants": [
+    {
+     "size": "500 g",
+     "price_inr": 190.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Grown organically in Rajasthan, our Quinoa is a clean, versatile seed with a light, fluffy texture once cooked. Naturally gluten-free and mildly nutty, it makes an excellent base for salads, pilafs, and even Indian-style pulao. ✨ Naturally gluten-free 😋 Light texture & neutral taste 💗 Great for salads, pulao & Buddha bowls",
+   "url": "https://24mantraorganic.com/products/organic-quinoa"
+  },
+  {
+   "name": "Organic Ajwain",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Elevate your kitchen essentials with 24 Mantra Organic Ajwain, a traditional spice celebrated for its bold, peppery flavor and impressive wellness benefits. Sourced organically and cultivated with care, our ajwain seeds are pure, potent, and free from synthetic chemicals and additives. Whether sprinkled into parathas, tempering dals, or added to ho",
+   "url": "https://24mantraorganic.com/products/organic-ajwain-4"
+  },
+  {
+   "name": "Organic Arhar Dal (Tur Dal)",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Sourced from organic farms in Maharashtra, 24 Mantra Organic Tur Dal has a slightly nutty taste and thick consistency when cooked. A staple in Indian households, it’s perfect for making traditional dals and comforting home-cooked meals. 😋 Thick, creamy texture after cooking 💗 Great for everyday dals and comfort meals 🌱 Organically grown without che",
+   "url": "https://24mantraorganic.com/products/organic-arhar-dal-tur-dal-1"
+  },
+  {
+   "name": "Organic Black Pepper Whole",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Sourced from organic farms in Karnataka and Kerala, our black pepper is bold, aromatic, and sun-dried to retain its natural pungency. Known as the “King of Spices,” this pantry essential brings warmth and depth to every dish — from simple rasams to continental sauces. Free from harmful chemicals and grown using sustainable farming practices, it’s y",
+   "url": "https://24mantraorganic.com/products/organic-black-pepper-whole-4"
+  },
+  {
+   "name": "Organic Brown Chana",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Grown in the nutrient-rich soils of Maharashtra and Madhya Pradesh, 24 Mantra Organic Brown Chana is naturally dense and full of earthy flavor. Soak and cook it for rich curries, sprout it for fresh salads, or roast it for a crunchy snack. 😋 Hearty texture and earthy flavor 💗 Ideal for curries, sprouts, and roasting 🌱 100% organic and unpolished",
+   "url": "https://24mantraorganic.com/products/organic-brown-chana"
+  },
+  {
+   "name": "Organic Chana Dal",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Sourced from organic farms in Maharashtra and Madhya Pradesh, 24 Mantra Organic Chana Dal is a kitchen essential known for its rich, nutty flavor and firm texture. It cooks beautifully into thick dals and curries, adding wholesome taste to your meals. 😋 Mildly nutty flavor with a firm bite 💗 Perfect for dals, curries, and savory dishes 🌱 Organicall",
+   "url": "https://24mantraorganic.com/products/organic-chana-dal-3"
+  },
+  {
+   "name": "Organic Cumin",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Sourced from organic farms in Rajasthan, these Cumin Seeds are prized for their warm, earthy aroma and robust flavor. Whether you're dry roasting or using them in tadkas, they deliver pure, chemical-free authenticity to your kitchen. 😋 Aromatic and flavorful 🌱 Organically grown and sun-dried 💗 Great for dals, curries, and masalas 🚫 No chemical proc",
+   "url": "https://24mantraorganic.com/products/organic-cumin-3"
+  },
+  {
+   "name": "Organic Fenugreek Seeds",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Harvested from organic farms in Rajasthan, our Fenugreek Seeds offer a nutty bitterness that works beautifully in pickles, spice blends, and lentil dishes. They’re whole, natural, and completely free from synthetic coatings. ✨ Clean and whole seeds 🚫 Grown without synthetic inputs 😋 Great for pickling and spice mixes 🌱 100% natural",
+   "url": "https://24mantraorganic.com/products/organic-fenugreek-seeds-2"
+  },
+  {
+   "name": "Organic Green Moong Dal Split",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Carefully sourced from Maharashtra, Rajasthan, Karnataka, Madhya Pradesh, and Andhra Pradesh, 24 Mantra Organic Moong Dal Split cooks quickly and has a mild, slightly sweet taste. It’s an excellent choice for light dals, khichdi, and soups. 💗 Light, easy-to-digest, and quick to cook 😋 Perfect for dals, soups, and khichdi 🌱 Organically grown, unpoli",
+   "url": "https://24mantraorganic.com/products/organic-green-moong-dal-split"
+  },
+  {
+   "name": "Organic Kabuli Chana",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Grown in Rajasthan and Madhya Pradesh, 24 Mantra Organic Kabuli Chana is known for its large, creamy-white grains and firm texture. It holds its shape well when cooked, making it ideal for curries, hummus, and salads. 😋 Firm texture and mild, nutty flavor 💗 Perfect for curries, hummus, and salads 🌱 Organically cultivated without additives",
+   "url": "https://24mantraorganic.com/products/organic-kabuli-chana"
+  },
+  {
+   "name": "Organic Masoor Malka",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Grown on certified organic farms in Madhya Pradesh , our Masoor Malka is split and skinned red lentils — a quick-cooking, wholesome addition to your daily meals. It delivers a smooth texture and mild, comforting flavour that blends beautifully into dals and stews. Free from synthetic chemicals and pesticides, it’s a clean, plant-based protein sourc",
+   "url": "https://24mantraorganic.com/products/organic-masoor-malka"
+  },
+  {
+   "name": "Organic Masoor Whole",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Sourced from Madhya Pradesh, 24 Mantra Organic Masoor Dal cooks quickly and has a naturally mild, earthy flavor. Its soft, creamy texture makes it an excellent base for comforting dals, soups, and stews. 😋 Soft texture and mild flavor 💗 Quick-cooking for easy meal preparation 🌱 100% organic and free from chemicals",
+   "url": "https://24mantraorganic.com/products/organic-masoor-whole"
+  },
+  {
+   "name": "Organic Moong Chilka",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Sourced from certified organic farms across Maharashtra, Rajasthan, Karnataka, Madhya Pradesh, and Andhra Pradesh , our Moong Chilka (split green gram with skin) is a kitchen essential that’s both nutritious and easy to cook. With its mild earthy flavour and soft texture, it works perfectly in traditional dals, khichdis, and comforting soups. Organ",
+   "url": "https://24mantraorganic.com/products/organic-moong-chilka"
+  },
+  {
+   "name": "Organic Moong Whole",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Sourced from Maharashtra, Rajasthan, Karnataka, Madhya Pradesh, and Andhra Pradesh, 24 Mantra Organic Moong Dal Whole is packed with natural goodness. Its delicate flavor and soft texture make it ideal for wholesome dals, sprouted dishes, and stir-fries. 😋 Mild taste with a soft, creamy texture 💗 Can be cooked whole or sprouted for added versatilit",
+   "url": "https://24mantraorganic.com/products/organic-moong-whole"
+  },
+  {
+   "name": "Organic Mustard Small",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Organically grown in the plains of Madhya Pradesh, these Mustard Seeds offer a clean, sharp pungency that’s perfect for Indian cooking. Their natural intensity and purity shine in tadkas, pickles, and more. 😋 Clean and crisp flavor 🌱 Naturally grown, unpolished 💗 Ideal for seasoning and tempering",
+   "url": "https://24mantraorganic.com/products/organic-mustard-small-3"
+  },
+  {
+   "name": "Organic Peanut",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Harvested from organic farms in Karnataka, Maharashtra, Andhra Pradesh, and Telangana, these raw peanuts are unroasted and unprocessed. Ideal for roasting, snacking, or adding crunch to chutneys and salads—just clean, protein-rich goodness. 💗 Unroasted, chemical-free whole peanuts 😋 Great for snacking or cooking 🌱 Sourced from certified organic far",
+   "url": "https://24mantraorganic.com/products/organic-peanut-1"
+  },
+  {
+   "name": "Organic Poha",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Light, nutritious, and easy to digest, 24 Mantra Organic Poha is made from high-quality organic rice, ensuring purity and great taste in every bite. Grown in Andhra Pradesh, India, our Poha is naturally processed to retain its nutritional goodness while offering a soft, fluffy texture when cooked. A versatile staple, it can be enjoyed as a wholesom",
+   "url": "https://24mantraorganic.com/products/organic-poha-3"
+  },
+  {
+   "name": "Organic Puffed Rice",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Made from organic rice grown in Andhra Pradesh, our Puffed Rice is light, airy, and crisp. A pantry essential for healthy snacking or making quick bites like bhel and murmura upma, it's free from additives and preservatives. Just pure, clean crunch. 😋 Light, crisp & easy to digest 💗 Great for bhel, chivda & quick snacks 🚫 Made without chemicals or ",
+   "url": "https://24mantraorganic.com/products/organic-puffed-rice-3"
+  },
+  {
+   "name": "Organic Rajma",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Grown in Maharashtra and Andhra Pradesh, 24 Mantra Organic Chitkabra Rajma is known for its speckled appearance and rich, buttery texture. It absorbs flavors beautifully, making it perfect for slow-cooked rajma dishes. 😋 Rich, creamy texture after cooking 💗 Great for slow-cooked curries and stews 🌱 100% organic and naturally grown",
+   "url": "https://24mantraorganic.com/products/organic-rajma"
+  },
+  {
+   "name": "Organic Sonamasuri Brown Rice",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": false
+    }
+   ],
+   "description": "Grown in Andhra Pradesh, India, 24 Mantra Sonamasuri Brown Rice is a whole-grain option that retains its bran layer, providing a rich, slightly nutty flavour. This unpolished rice offers a satisfying texture and can be used in a variety of everyday meals. A great option for those looking for a wholesome diet without artificial additives. 😋 Retains ",
+   "url": "https://24mantraorganic.com/products/organic-sonamasuri-brown-rice"
+  },
+  {
+   "name": "Organic Wheat Dhaliya",
+   "category": "Select",
+   "variants": [
+    {
+     "size": "Default Title",
+     "price_inr": 0.0,
+     "in_stock": true
+    }
+   ],
+   "description": "Made from carefully sourced wheat from Rajasthan, Madhya Pradesh, and Maharashtra , our Organic Wheat Dhaliya is a wholesome choice for light yet filling meals. Coarsely ground for a hearty texture, it’s ideal for both sweet and savory recipes like porridge or upma. Packed with the natural goodness of whole wheat and nothing else, this is clean, or",
+   "url": "https://24mantraorganic.com/products/organic-wheat-dhaliya"
+  }
+ ]
+}
