@@ -19,11 +19,15 @@ button:disabled{opacity:.5}
 .dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}
 .think{color:#666;font-size:14px}
 @keyframes bounce{0%,80%,100%{opacity:.25;transform:translateY(0)}40%{opacity:1;transform:translateY(-4px)}}
+#sidbar{max-width:760px;margin:0 auto;width:100%;box-sizing:border-box;padding:0 16px;font-size:12px;color:#666}
+#sidbar code{user-select:all}
+#copysid{border:1px solid #bbb;background:#fff;border-radius:6px;font-size:12px;cursor:pointer;padding:1px 8px}
 #new{float:right;background:#fff;color:#2e7d32;border:0;border-radius:8px;padding:6px 12px;font-weight:600;cursor:pointer}
 </style></head><body>
 <header><button id="new" type="button" title="Start a fresh conversation">+ New chat</button>24 Mantra Organic — Shopping Advisor<small>Simulated AI advisor, not an official representative. You make the final purchase decision. Chats are stored for a class project.</small></header>
 <div id="log"></div>
 <div id="chips"></div>
+<div id="sidbar">Session ID: <code id="sidtxt"></code> <button type="button" id="copysid">Copy</button></div>
 <form id="f"><input id="t" placeholder="Type your message…" autocomplete="off"><button class="send" id="b">Send</button></form>
 <script>
 let sid=localStorage.getItem("sid");
@@ -51,6 +55,8 @@ async function send(msg){
   catch{w.textContent="Network error, please retry."}
   b.disabled=false;t.focus();
 }
+document.getElementById("sidtxt").textContent=sid;
+document.getElementById("copysid").onclick=e=>{navigator.clipboard.writeText(sid).then(()=>e.target.textContent="Copied").catch(()=>{})};
 document.getElementById("new").onclick=()=>{
   if(!confirm("Start a new chat? Your current conversation stays saved but won't be shown here."))return;
   localStorage.setItem("sid",crypto.randomUUID());location.reload()};

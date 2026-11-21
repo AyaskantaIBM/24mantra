@@ -131,18 +131,40 @@ def check_admin(key: str):
 
 
 @app.get("/admin", response_class=HTMLResponse)
-def admin(key: str = ""):
+def admin(key: str = "", q: str = "", hide_tests: int = 1):
     check_admin(key)
     sessions: dict[str, list] = {}
     for m in db.all_messages():
         sessions.setdefault(m["session_id"], []).append(m)
-    out = [f"<h2>{len(sessions)} conversations</h2><p><a href='/admin/export.csv?key={html.escape(key)}'>Download CSV</a></p>"]
+    is_test = lambda sid: sid.startswith(("probe", "stream-t", "localtest", "testsession"))
+    rows = []
     for sid, ms in sessions.items():
-        out.append(f"<details><summary><b>{html.escape(sid[:8])}</b> — {len(ms)} msgs — {ms[0]['created_at']}</summary>")
+        if hide_tests and is_test(sid):
+            continue
+        first_user = next((m["content"] for m in ms if m["role"] == "user"), "(no user message yet)")
+        text = (sid + " " + " ".join(m["content"] for m in ms)).lower()
+        if q and q.lower() not in text:
+            continue
+        rows.append((ms[-1]["created_at"], sid, ms, first_user))
+    rows.sort(reverse=True)
+    k = html.escape(key)
+    out = [f"""<style>body{{font-family:system-ui;max-width:900px;margin:24px auto;padding:0 16px}}
+details{{border:1px solid #ccc;border-radius:8px;margin:8px 0;padding:8px 12px}}summary{{cursor:pointer}}
+.sid{{font-family:monospace;font-size:12px;color:#555;user-select:all}}.u{{background:#e8f5e9;padding:6px 10px;border-radius:6px}}
+.a{{background:#f5f5f5;padding:6px 10px;border-radius:6px;white-space:pre-wrap}}small{{color:#777}}</style>
+<h2>{len(rows)} conversations <small>({len(sessions)} in database)</small></h2>
+<form method=get><input type=hidden name=key value="{k}">
+<input name=q value="{html.escape(q)}" placeholder="search text or session id" size=34>
+<input type=hidden name=hide_tests value=0><label><input type=checkbox name=hide_tests value=1 {'checked' if hide_tests else ''}> hide test chats</label>
+<button>Filter</button> &nbsp; <a href="/admin/export.csv?key={k}">Download CSV</a></form>"""]
+    for last, sid, ms, first_user in rows:
+        out.append(f"<details><summary><b>{html.escape(first_user[:70])}</b> <small>· {len(ms)} msgs · last {str(last)[:19]}</small></summary>"
+                   f"<p class=sid>Session ID: {html.escape(sid)}</p>")
         for m in ms:
-            out.append(f"<p><b>{m['role']}</b> <small>{m['created_at']}</small><br>{html.escape(m['content'])}</p>")
+            cls = "u" if m["role"] == "user" else "a"
+            out.append(f"<p class={cls}><b>{m['role']}</b> <small>{str(m['created_at'])[:19]}</small><br>{html.escape(m['content'])}</p>")
         out.append("</details>")
-    return "<body style='font-family:system-ui;max-width:800px;margin:auto'>" + "".join(out)
+    return "".join(out)
 
 
 @app.get("/admin/export.csv")
