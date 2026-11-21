@@ -31,6 +31,25 @@ def get(c, url, tries=4):
     raise RuntimeError(f"rate limited: {url}")
 
 
+# The store files 20 products under a vague "Select" tag; infer a real category from the product name.
+NAME_RULES = [
+    ("Dal/Pulses/Beans", ["dal", "chana", "rajma", "moong", "masoor", "peanut", "beans"]),
+    ("Rice & Rice Products", ["poha", "puffed rice", "rice", "dhaliya"]),
+    ("Whole Spices", ["ajwain", "pepper", "cumin", "fenugreek", "mustard", "seed"]),
+]
+
+
+def fix_category(tags, name):
+    real = [t for t in tags if t.strip().lower() not in ("select", "")]
+    if real:
+        return ", ".join(real)
+    n = name.lower()
+    for cat, words in NAME_RULES:
+        if any(w in n for w in words):
+            return cat
+    return "Grocery"
+
+
 with httpx.Client(headers=HEAD, timeout=30, follow_redirects=True) as c:
     index = get(c, f"{BASE}/sitemap.xml").text
     prod_maps = [html.unescape(u) for u in re.findall(r"<loc>([^<]*sitemap_products[^<]*)</loc>", index)]
@@ -48,10 +67,10 @@ with httpx.Client(headers=HEAD, timeout=30, follow_redirects=True) as c:
             continue
         products.append({
             "name": d["title"],
-            "category": ", ".join(d.get("tags") or []) or d.get("type") or "",
+            "category": fix_category(d.get("tags") or [], d["title"]),
             "variants": [{"size": v["title"], "price_inr": v["price"] / 100, "in_stock": v["available"]}
                          for v in d["variants"]],
-            "description": text(d["description"])[:350],
+            "description": text(d["description"])[:800],
             "url": f"{BASE}/products/{h}",
         })
         print("ok", d["title"])
